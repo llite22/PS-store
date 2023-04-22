@@ -32,7 +32,7 @@ const ProductCard: FC<Game> = ({
 	const bgColor = imageDevColor
 	return (
 		<div className={styles.productCard}>
-			<Image src={image} width={170} height={170} alt="game" />
+			<Image src={image} width={170} height={170} alt={title} />
 			<h2>{title}</h2>
 			<p>{description}</p>
 			<div className={styles.productCard__ps}>

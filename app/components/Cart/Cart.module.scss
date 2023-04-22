@@ -1,0 +1,33 @@
+.cart {
+	&__title {
+		display: flex;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 25px;
+		color: #ffffff;
+		margin-top: 50px;
+		margin-bottom: 25px;
+        
+       
+	}
+
+	ul {
+        
+        
+		li {
+            display: flex;
+			color: #ffffff;
+			font-weight: 800;
+			font-size: 12px;
+			line-height: 16px;
+            margin-top: 15px;
+
+            
+		}
+        
+          
+         
+	}
+   
+}
