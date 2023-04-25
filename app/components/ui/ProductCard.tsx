@@ -1,9 +1,17 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import styles from './ProductCard.module.scss'
 import { Game } from '@/app/interfaces/IGame'
+import { addItem } from '@/app/redux/slices/cartSlice'
+import { updateTotalPrice } from '@/app/redux/slices/cartSlice'
+import { useEffect } from 'react'
+
+const maxTitleLength = 22;
+
 
 const ProductCard: FC<Game> = ({
 	id,
@@ -17,23 +25,64 @@ const ProductCard: FC<Game> = ({
 	newPrice,
 	imageDevColor,
 }) => {
+	const router = useRouter()
+	const dispatch = useDispatch()
 	const [addedToCart, setAddedToCart] = useState(false)
-	const handleAddToCart = () => {
-		setAddedToCart((prev) => !prev)
+
+	const onClickAdd = () => {
+		dispatch(
+			addItem({
+				id,
+				addOn,
+				playstation,
+				title,
+				image,
+				description,
+				imageDev,
+				price,
+				newPrice,
+				imageDevColor,
+			})
+		)
+		dispatch(updateTotalPrice())
+		setAddedToCart(true)
+		localStorage.setItem(`addedToCart-${id}`, 'true')
 	}
-	const newPriceYes =
-		typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)
-			? newPrice
-			: newPrice
-			? `$${newPrice}`
-			: ''
-	const priceOld = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
+
+	useEffect(() => {
+		const added = localStorage.getItem(`addedToCart-${id}`)
+		if (added === 'true') {
+		  setAddedToCart(true)
+		}
+	  }, [])
+	  
+	  const onButtonClick = () => {
+		if (addedToCart) {
+		  router.push('/cart')
+		} else {
+		  onClickAdd()
+		}
+	  }
+
+	  let newPriceYes = '';
+	  if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
+		newPriceYes = newPrice;
+	  } else if (newPrice) {
+		newPriceYes = `$${newPrice}`;
+	  }
+
+	const priceYes = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
 
 	const bgColor = imageDevColor
+
+	const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
+
+
+
 	return (
 		<div className={styles.productCard}>
 			<Image src={image} width={170} height={170} alt={title} />
-			<h2>{title}</h2>
+			<h2>{truncatedTitle}</h2>
 			<p>{description}</p>
 			<div className={styles.productCard__ps}>
 				<h3>{playstation}</h3>
@@ -55,13 +104,13 @@ const ProductCard: FC<Game> = ({
 							className={`${styles.productCard__price} ${
 								addedToCart ? styles.productCard__added : ''
 							}`}
-							onClick={handleAddToCart}
+							onClick={addedToCart ? () => router.push('/cart') : onButtonClick}
 						>
 							{addedToCart ? (
-								<span>Добавлено в корзину</span>
+								<span>Посмотреть в корзине</span>
 							) : (
 								<>
-									<span>{priceOld}</span>
+									<span>{priceYes}</span>
 									<span className={styles.productCard__priceSeparator}></span>
 									<span
 										className={`${styles.productCard__newPrice} ${
@@ -80,12 +129,12 @@ const ProductCard: FC<Game> = ({
 						className={`${styles.productCard__price} ${
 							addedToCart ? styles.productCard__added : ''
 						}`}
-						onClick={handleAddToCart}
+						onClick={addedToCart ? () => router.push('/cart') : onButtonClick}
 					>
 						{addedToCart ? (
-							<span>Добавлено в корзину</span>
+							<span>Посмотреть в корзине</span>
 						) : (
-							<span>{priceOld}</span>
+							<span>{priceYes}</span>
 						)}
 					</button>
 				)}

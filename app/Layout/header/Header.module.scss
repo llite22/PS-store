@@ -4,6 +4,7 @@
 		display: flex;
 		align-items: center;
 		height: 36px;
+		
 	}
 	&__logo {
 		display: flex;
@@ -40,24 +41,24 @@
 		margin-right: 10px;
 		cursor: pointer;
 	}
-	.header__cartContainer {
+	&__cartContainer {
 		display: flex;
 		align-items: center;
 		position: relative;
 	}
-	.header__cartCount {
+	&__cartCount {
 		position: absolute;
 		top: 7px;
 		right: 5px;
-		width: 15px;
-		height: 15px;
+		width: 17px;
+		height: 17px;
 		border-radius: 50%;
-		background-color: red;
+		background-color:#0072CE;
 		color: white;
 		font-size: 10px;
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 	}
 
 	&__input {

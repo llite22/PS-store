@@ -17,7 +17,7 @@ const ProductsList:FC<GameData> = ({ games }) => {
           <Link href="/catalog">VIEW ALL +</Link>
         </div>
         <div className={styles.product__item}>        
-          {games && games.slice(0, 12).map((game) => (
+          {games && games.filter((game, index) => index < 12).map((game) => (
             <ProductCard
               key={game.id}
               id={game.id}

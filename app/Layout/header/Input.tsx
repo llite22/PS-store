@@ -1,33 +1,39 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FC, useEffect, useState } from 'react'
-
+import { useDispatch } from 'react-redux'
 import styles from './Header.module.scss'
-import { IonSearch } from '@/app/interfaces/IonSearch.interface'
+import { setSearchTerm } from '@/app/redux/slices/filterSlice'
 
-const SearchForm: FC<IonSearch> = ({ onSearch }) => {
+const Input: FC = () => {
 	const [searchText, setSearchText] = useState('')
-	
 	const router = useRouter()
+	const dispatch = useDispatch()
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		if (searchText) {
-			onSearch(searchText)
-			router.push(`/catalog?search=${encodeURIComponent(searchText)}`)
+			dispatch(setSearchTerm(searchText))
+			router.push('/catalog?search=' + encodeURIComponent(searchText))
 		}
 	}
 
 	useEffect(() => {
 		const { search } = router.query
 		if (search) {
-		  setSearchText(decodeURIComponent(search as string))
+			setSearchText(decodeURIComponent(search as string))
 		}
-	  }, [router.query])
+	}, [router.query])
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value
 		setSearchText(value)
+	}
+	const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		const value = (event.target as HTMLInputElement).value
+		setSearchText(value)
+		dispatch(setSearchTerm(value))
+		router.push('/catalog?search=' + encodeURIComponent(value))
 	}
 
 	return (
@@ -48,10 +54,10 @@ const SearchForm: FC<IonSearch> = ({ onSearch }) => {
 					name="search"
 					value={searchText}
 					onChange={handleChange}
+					onKeyUp={handleKeyUp}
 				/>
 			</div>
 		</form>
 	)
 }
-
-export default SearchForm
+export default Input
