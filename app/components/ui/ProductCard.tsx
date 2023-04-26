@@ -77,8 +77,6 @@ const ProductCard: FC<Game> = ({
 
 	const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
 
-
-
 	return (
 		<div className={styles.productCard}>
 			<Image src={image} width={170} height={170} alt={title} />
