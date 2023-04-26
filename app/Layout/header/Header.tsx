@@ -7,6 +7,7 @@ import styles from './Header.module.scss'
 import Input from './Input'
 import { RootState } from '@/app/redux/store'
 
+
 const Header: FC = () => {
 	const { items } = useSelector((state: RootState) => state.cart)
 

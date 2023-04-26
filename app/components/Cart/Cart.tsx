@@ -24,7 +24,7 @@ const Cart: FC = () => {
 			<div className="container">
 				<div className={styles.cart__title}>
 					<h2>Корзина</h2>
-					<p>{totalPrice !== 0 ? `Итого: ${totalPrice}$` : 'Пока пусто'}</p>
+					<p>{totalPrice !== 0 ? `Итого: ${totalPrice}$` : 'Итого: 0$'}</p>
 				</div>
 				<div className={styles.cart__total}></div>
 				<ul>

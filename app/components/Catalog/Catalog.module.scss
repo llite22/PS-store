@@ -23,8 +23,17 @@
 		grid-template-columns: repeat(auto-fit, minmax(170px, max-content));
 		gap: 30px;
 		padding-bottom: 50px;
-		justify-content: center;
+		justify-content: center;	
 	}
+	&__no {
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 25px;
+		color: #ffffff;
+		
+	}
+
+
 	@media (max-width: 1170px) {
 		&__title {
 			max-width: 970px;

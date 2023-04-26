@@ -23,16 +23,20 @@ export const cartSlice = createSlice({
 		removeItem: (state, action: PayloadAction<number>) => {
 			state.items = state.items.filter((obj) => obj.id !== action.payload)
 		},
-		
+
 		updateTotalPrice: (state) => {
-			state.totalPrice = parseFloat(state.items.reduce((sum, obj) => {
-			  let price = parseFloat(obj.price)
-			  if (obj.newPrice && obj.newPrice === 'FREE') {
-				price = 0
-			  }
-			  return sum + price
-			}, 0).toFixed(2))
-		  },
+			state.totalPrice = parseFloat(
+				state.items
+					.reduce((sum, obj) => {
+						let price = parseFloat(obj.price)
+						if (obj.newPrice && obj.newPrice === 'FREE') {
+							price = 0
+						}
+						return sum + price
+					}, 0)
+					.toFixed(2)
+			)
+		},
 	},
 })
 // Action creators are generated for each case reducer function
