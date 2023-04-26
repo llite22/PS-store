@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import styles from './Header.module.scss'
@@ -29,12 +29,6 @@ const Input: FC = () => {
 		}, 1000)
 		setTimerId(newTimerId)
 	}
-	useEffect(() => {
-		const { search } = router.query
-		if (search) {
-			setSearchText(decodeURIComponent(search as string))
-		}
-	}, [router.query])
 
 	return (
 		<form onSubmit={handleSubmit}>
