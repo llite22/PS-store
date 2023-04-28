@@ -75,12 +75,19 @@ const ProductCard: FC<Game> = ({
 
 	const bgColor = imageDevColor
 
-	const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
+	const truncatedTitle = (str: string) => {
+		if (str.length >= 22) {
+			return str.substring(0, 22) + '...'
+		}
+		return str
+	}
+
+	// const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
 
 	return (
 		<div className={styles.productCard}>
 			<Image src={image} width={170} height={170} alt={title} />
-			<h2>{truncatedTitle}</h2>
+			<h2>{truncatedTitle(title)}</h2>
 			<p>{description}</p>
 			<div className={styles.productCard__ps}>
 				<h3>{playstation}</h3>
