@@ -10,7 +10,7 @@ import { addItem } from '@/app/redux/slices/cartSlice'
 import { updateTotalPrice } from '@/app/redux/slices/cartSlice'
 import { useEffect } from 'react'
 
-const maxTitleLength = 22;
+
 
 
 const ProductCard: FC<Game> = ({
@@ -81,8 +81,6 @@ const ProductCard: FC<Game> = ({
 		}
 		return str
 	}
-
-	// const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
 
 	return (
 		<div className={styles.productCard}>
