@@ -1,11 +1,10 @@
-import { GameData } from '@/app/interfaces/IGame';
+
 import { FC } from 'react'
 import Cart from '../../Cart/Cart';
 
-
-const CartScreen: FC<GameData> = ({games}) => {
+const CartScreen: FC = () => {
 	return (
-			<Cart games={games}/>
+			<Cart/>
 	)
 }
 export default CartScreen
