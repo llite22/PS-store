@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useEffect, useRef } from 'react'
+import { FC } from 'react'
 import { useSelector } from 'react-redux'
 
 import styles from './Header.module.scss'
