@@ -2,16 +2,13 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import styles from './ProductCard.module.scss'
 import { Game } from '@/app/interfaces/IGame'
 import { addItem } from '@/app/redux/slices/cartSlice'
 import { updateTotalPrice } from '@/app/redux/slices/cartSlice'
-import { useEffect } from 'react'
-
-
-
 
 const ProductCard: FC<Game> = ({
 	id,
@@ -46,30 +43,30 @@ const ProductCard: FC<Game> = ({
 		)
 		dispatch(updateTotalPrice())
 		setAddedToCart(true)
-		localStorage.setItem(`addedToCart-${id}`, 'true')
+		sessionStorage.setItem(`addedToCart-${id}`, 'true')
 	}
 
 	useEffect(() => {
-		const added = localStorage.getItem(`addedToCart-${id}`)
+		const added = sessionStorage.getItem(`addedToCart-${id}`)
 		if (added === 'true') {
-		  setAddedToCart(true)
+			setAddedToCart(true)
 		}
-	  }, [])
-	  
-	  const onButtonClick = () => {
-		if (addedToCart) {
-		  router.push('/cart')
-		} else {
-		  onClickAdd()
-		}
-	  }
+	}, [])
 
-	  let newPriceYes = '';
-	  if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
-		newPriceYes = newPrice;
-	  } else if (newPrice) {
-		newPriceYes = `$${newPrice}`;
-	  }
+	const onButtonClick = () => {
+		if (addedToCart) {
+			router.push('/cart')
+		} else {
+			onClickAdd()
+		}
+	}
+
+	let newPriceYes = ''
+	if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
+		newPriceYes = newPrice
+	} else if (newPrice) {
+		newPriceYes = `$${newPrice}`
+	}
 
 	const priceYes = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
 
