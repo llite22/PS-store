@@ -16,7 +16,7 @@ const Cart: FC = () => {
 	const handleRemoveItem = (id: number) => {
 		dispatch(removeItem(id))
 		dispatch(updateTotalPrice())
-		localStorage.removeItem(`addedToCart-${id}`)
+		sessionStorage.removeItem(`addedToCart-${id}`)
 	}
 
 	return (
