@@ -3,7 +3,7 @@
 import styles from "../Header/Header.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 
 const Input: FC = () => {
   const [searchValue, setSearchValue] = useState<string>("");
