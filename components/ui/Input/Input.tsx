@@ -12,24 +12,22 @@ const Input: FC = () => {
     const searchParams: URLSearchParams = new URLSearchParams(
       window.location.search
     );
-
+  
     if (title) {
       searchParams.set("title", title);
     } else {
       searchParams.delete("title");
     }
     searchParams.delete("page");
-
-    const newPathName: string = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
-
-    router.push(`/catalog/${newPathName}`);	
-  };
-
   
-
-
+    const newPathName: string = `${
+      window.location.pathname.endsWith("/catalog")
+        ? window.location.pathname
+        : `/catalog${window.location.pathname}`
+    }?${searchParams.toString()}`;
+  
+    router.push(newPathName);
+  };
 
   const searchHandle = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchValue(event.target.value);
