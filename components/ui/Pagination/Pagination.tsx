@@ -2,10 +2,14 @@
 import { FC } from "react";
 import { useRouter } from "next/navigation"
 import { updateSearchParams } from "@/utils/search.params";
+import { SearchParamsProps } from "@/api/Games";
+
+interface SearchParams {
+  searchParams: SearchParamsProps
+}
 
 
-
-const Pagination:FC = ({searchParams}) => {
+const Pagination:FC<SearchParams> = ({searchParams}) => {
     const router = useRouter()
 
     const totalPages: number = 5;

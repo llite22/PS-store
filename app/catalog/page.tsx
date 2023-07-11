@@ -1,9 +1,10 @@
 import { GameServices } from "@/api/Games";
 import Catalog from "@/components/pages/Catalog/Catalog";
-import { Game, GameData } from "@/interfaces/IGame";
+import { Game } from "@/interfaces/IGame";
+import { SearchParamsProps } from "@/api/Games";
 
-export default async function CatalogPage({ searchParams }) {
-  const games: Game = await getGames({
+export default async function CatalogPage({ searchParams }: {searchParams: SearchParamsProps}) {
+  const games: Game[] = await getGames({
     page: searchParams.page || "1",
     title: searchParams.title || ' ',
   });
@@ -14,7 +15,7 @@ export default async function CatalogPage({ searchParams }) {
   );
 }
 
-async function getGames(filters: { page: string, title: string }): Promise<Game> {
+async function getGames(filters: SearchParamsProps): Promise<Game[]> {
   const gamesResponse: Game = await GameServices.getAllGames(filters);
   const games = gamesResponse.items;
   return games;

@@ -3,8 +3,14 @@ import { GameData } from '@/interfaces/IGame'
 import ProductCard from '@/components/ui/ProductCard/ProductCard'
 import styles from './Catalog.module.scss'
 import Pagination from '@/components/ui/Pagination/Pagination'
+import { SearchParamsProps } from '@/api/Games'
 
-const Catalog: FC<GameData> = ({ games, searchParams }) => {
+
+interface CatalogProps extends GameData {
+	searchParams: SearchParamsProps;
+  }
+
+const Catalog: FC<CatalogProps> = ({ games, searchParams }) => {
 	return (
 		<section className={styles.catalog}>
 			<div className={styles.catalog__container}>
