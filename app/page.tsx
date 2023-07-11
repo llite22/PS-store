@@ -5,6 +5,7 @@ import { Game } from "@/interfaces/IGame";
 export default async function HomePage({ searchParams }) {
   const games: Game = await getGames({
     page: searchParams.page || "1",
+    title: searchParams.title || ' ',
   });
   return (
     <main>
@@ -13,7 +14,7 @@ export default async function HomePage({ searchParams }) {
   );
 }
 
-async function getGames(filters: { page: string }): Promise<Game> {
+async function getGames(filters: { page: string, title: string }): Promise<Game> {
   const gamesResponse: Game = await GameServices.getAllGames(filters);
   const games = gamesResponse.items;
   return games;
