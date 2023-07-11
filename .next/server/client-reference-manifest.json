@@ -40,14 +40,6 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/image-component.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image-component.js",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
@@ -75,6 +67,14 @@
     "(app-client)/./app/layout.tsx": {
       "*": {
         "id": "(sc_client)/./app/layout.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/image-component.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image-component.js",
         "name": "*",
         "chunks": [],
         "async": false
@@ -171,22 +171,6 @@
       ],
       "async": false
     },
-    "D:\\PET\\PS-store\\peter\\node_modules\\next\\dist\\client\\image-component.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
-      "name": "*",
-      "chunks": [
-        "app/not-found:static/chunks/app/not-found.js"
-      ],
-      "async": false
-    },
-    "D:\\PET\\PS-store\\peter\\node_modules\\next\\dist\\esm\\client\\image-component.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
-      "name": "*",
-      "chunks": [
-        "app/not-found:static/chunks/app/not-found.js"
-      ],
-      "async": false
-    },
     "D:\\PET\\PS-store\\peter\\node_modules\\next\\dist\\client\\link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
@@ -235,11 +219,19 @@
       ],
       "async": false
     },
-    "D:\\PET\\PS-store\\peter\\components\\pages\\Catalog\\Catalog.module.scss": {
-      "id": "(app-client)/./components/pages/Catalog/Catalog.module.scss",
+    "D:\\PET\\PS-store\\peter\\node_modules\\next\\dist\\client\\image-component.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
       "name": "*",
       "chunks": [
-        "app/catalog/page:static/chunks/app/catalog/page.js"
+        "app/not-found:static/chunks/app/not-found.js"
+      ],
+      "async": false
+    },
+    "D:\\PET\\PS-store\\peter\\node_modules\\next\\dist\\esm\\client\\image-component.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image-component.js",
+      "name": "*",
+      "chunks": [
+        "app/not-found:static/chunks/app/not-found.js"
       ],
       "async": false
     },
@@ -250,21 +242,29 @@
         "app/cart/page:static/chunks/app/cart/page.js"
       ],
       "async": false
+    },
+    "D:\\PET\\PS-store\\peter\\components\\pages\\Catalog\\Catalog.module.scss": {
+      "id": "(app-client)/./components/pages/Catalog/Catalog.module.scss",
+      "name": "*",
+      "chunks": [
+        "app/catalog/page:static/chunks/app/catalog/page.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
-    "D:\\PET\\PS-store\\peter\\app\\not-found": [],
     "D:\\PET\\PS-store\\peter\\app\\page": [
       "static/css/app/page.css"
     ],
     "D:\\PET\\PS-store\\peter\\app\\layout": [
       "static/css/app/layout.css"
     ],
-    "D:\\PET\\PS-store\\peter\\app\\catalog\\page": [
-      "static/css/app/catalog/page.css"
-    ],
+    "D:\\PET\\PS-store\\peter\\app\\not-found": [],
     "D:\\PET\\PS-store\\peter\\app\\cart\\page": [
       "static/css/app/cart/page.css"
+    ],
+    "D:\\PET\\PS-store\\peter\\app\\catalog\\page": [
+      "static/css/app/catalog/page.css"
     ]
   }
 }

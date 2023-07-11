@@ -1,14 +1,14 @@
+'use client'
 import { FC, useState,useEffect  } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
 import { addItem } from '@/redux/slices/cartSlice'
 import { updateTotalPrice } from '@/redux/slices/cartSlice'
 import { Game } from '@/interfaces/IGame'
 import styles from './ProductCard.module.scss'
 
-const maxTitleLength = 22;
-
+const maxTitleLength: number = 22;
 
 const ProductCard: FC<Game> = ({
 	id,
@@ -24,7 +24,7 @@ const ProductCard: FC<Game> = ({
 }) => {
 	const router = useRouter()
 	const dispatch = useDispatch()
-	const [addedToCart, setAddedToCart] = useState(false)
+	const [addedToCart, setAddedToCart] = useState<boolean>(false)
 
 	const onClickAdd = () => {
 		dispatch(
@@ -47,13 +47,13 @@ const ProductCard: FC<Game> = ({
 	}
 
 	useEffect(() => {
-		const added = localStorage.getItem(`addedToCart-${id}`)
+		const added: string | null = localStorage.getItem(`addedToCart-${id}`)
 		if (added === 'true') {
 		  setAddedToCart(true)
 		}
 	  }, [])
 	  
-	  const onButtonClick = () => {
+	  const onButtonClick = (): void => {
 		if (addedToCart) {
 		  router.push('/cart')
 		} else {
@@ -61,18 +61,18 @@ const ProductCard: FC<Game> = ({
 		}
 	  }
 
-	  let newPriceYes = '';
+	  let newPriceYes: string = '';
 	  if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
 		newPriceYes = newPrice;
 	  } else if (newPrice) {
 		newPriceYes = `$${newPrice}`;
 	  }
 
-	const priceYes = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
+	const priceYes: string = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
 
-	const bgColor = imageDevColor
+	const bgColor: string | undefined = imageDevColor
 
-	const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
+	const truncatedTitle: string = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
 
 	return (
 		<div className={styles.productCard}>
