@@ -1,4 +1,4 @@
-import { GetGamesResponse } from "../interfaces/IGame";
+import { GetGamesResponse, FullGamesData } from "../interfaces/IGame";
 
 export interface SearchParamsProps {
   page?: string;
@@ -16,4 +16,13 @@ export const GameServices = {
       throw error;
     }
   },
+  async getGames(id: number): Promise<FullGamesData> {
+    try {
+      const request: Response = await fetch(`https://272d57829d9ed7cd.mokky.ru/items/${id}`);
+      return await request.json();
+    } catch (error) {
+      console.log((error as Error).message);
+      throw error;
+    }
+  }
 }
