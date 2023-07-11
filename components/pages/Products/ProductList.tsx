@@ -1,11 +1,15 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { GameData } from '@/interfaces/IGame'
+import { FullGamesData } from '@/interfaces/IGame'
 import ProductCard from '../../ui/ProductCard/ProductCard'
 import SliderGame from '../../SliderGame/SliderGame'
 import styles from './ProductList.module.scss'
 
-const ProductsList: FC<GameData> = ({ games }) => {
+interface ProductListProps {
+	games: FullGamesData[]
+}
+
+const ProductsList: FC<ProductListProps> = ({ games }) => {
 	return (
 		<section className={styles.product}>
 			<SliderGame />

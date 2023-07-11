@@ -1,4 +1,10 @@
-export interface Game {
+export interface GetGamesResponse {
+	items: Array<FullGamesData>;
+	page: number;
+	limit: number;
+
+}
+export interface FullGamesData {
 	id: number
 	title: string
 	description: string
@@ -9,8 +15,4 @@ export interface Game {
 	image: string
 	price: string
 	newPrice?: string
-}
-
-export interface GameData {
-  games: Game[]
-}
+};

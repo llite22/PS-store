@@ -1,9 +1,8 @@
 "use client";
-
-import styles from "../Header/Header.module.scss";
+import { FC, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FC, useState } from "react";
+import styles from "../Header/Header.module.scss";
 
 const Input: FC = () => {
   const [searchValue, setSearchValue] = useState<string>("");

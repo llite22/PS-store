@@ -1,12 +1,13 @@
 "use client";
 import { FC } from "react";
-import { Game } from "@/interfaces/IGame";
+import { FullGamesData } from "@/interfaces/IGame";
 import { removeItem } from "@/redux/slices/cartSlice";
 import { updateTotalPrice } from "@/redux/slices/cartSlice";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import styles from "./Cart.module.scss";
+
 const Cart: FC = () => {
   const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ const Cart: FC = () => {
         </div>
         <div className={styles.cart__total}></div>
         <ul>
-          {items.map((game: Game) => (
+          {items.map((game: FullGamesData) => (
             <li key={game.id}>
               <Image
                 className={styles.cart__image}

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { Game } from '@/interfaces/IGame'
+import { FullGamesData } from '@/interfaces/IGame'
 
 export interface cartState {
-	items: Game[]
+	items: FullGamesData[]
 	totalPrice: number
 }
 
@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
-		addItem: (state, action: PayloadAction<Game>) => {
+		addItem: (state, action: PayloadAction<FullGamesData>) => {
 			state.items.push(action.payload)
 		},
 		removeItem: (state, action: PayloadAction<number>) => {
@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
 		updateTotalPrice: (state) => {
 			state.totalPrice = parseFloat(
 				state.items
-					.reduce((sum: number, obj: Game) => {
+					.reduce((sum: number, obj: FullGamesData) => {
 						let price = parseFloat(obj.price)
 						if (obj.newPrice && obj.newPrice === 'FREE') {
 							price = 0

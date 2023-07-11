@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
 import { addItem } from '@/redux/slices/cartSlice'
 import { updateTotalPrice } from '@/redux/slices/cartSlice'
-import { Game } from '@/interfaces/IGame'
+import { FullGamesData } from '@/interfaces/IGame'
 import styles from './ProductCard.module.scss'
 
 const maxTitleLength: number = 22;
 
-const ProductCard: FC<Game> = ({
+const ProductCard: FC<FullGamesData> = ({
 	id,
 	addOn,
 	playstation,
