@@ -2,8 +2,9 @@ import { FC } from 'react'
 import { GameData } from '@/interfaces/IGame'
 import ProductCard from '@/components/ui/ProductCard/ProductCard'
 import styles from './Catalog.module.scss'
+import Pagination from '@/components/ui/Pagination/Pagination'
 
-const Catalog: FC<GameData> = ({ games }) => {
+const Catalog: FC<GameData> = ({ games, searchParams }) => {
 	return (
 		<section className={styles.catalog}>
 			<div className={styles.catalog__container}>
@@ -35,6 +36,7 @@ const Catalog: FC<GameData> = ({ games }) => {
 					</div>
 				)}
 			</div>
+			<Pagination searchParams={searchParams}/>
 		</section>
 	)
 }

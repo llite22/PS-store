@@ -16,7 +16,7 @@ const ProductsList: FC<GameData> = ({ games }) => {
 				</div>
 				<div className={styles.product__item}>
 					{games &&
-						games.filter((_, index) => index < 12).map((game) => (
+						games.filter((_, index: number) => index < 12).map((game) => (
 							<ProductCard
 								key={game.id}
 								id={game.id}

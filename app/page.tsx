@@ -1,18 +1,20 @@
 import { GameServices } from "@/api/Games";
 import ProductsList from "@/components/pages/Products/ProductList";
-import { Game, GameData } from "@/interfaces/IGame";
+import { Game } from "@/interfaces/IGame";
 
 export default async function HomePage({ searchParams }) {
-  const games: GameData = await getGames();
+  const games: Game = await getGames({
+    page: searchParams.page || "1",
+  });
   return (
     <main>
-      <ProductsList games={games} searchParams={searchParams} />
+      <ProductsList games={games} />
     </main>
   );
 }
 
-async function getGames(): Promise<GameData> {
-  const GamesResponse: Game = await GameServices.getAllGames();
-  const games = GamesResponse;
+async function getGames(filters: { page: string }): Promise<Game> {
+  const gamesResponse: Game = await GameServices.getAllGames(filters);
+  const games = gamesResponse.items;
   return games;
 }
