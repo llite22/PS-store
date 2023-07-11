@@ -30,8 +30,12 @@ export const cartSlice = createSlice({
 						let price = parseFloat(obj.price)
 						if (obj.newPrice && obj.newPrice === 'FREE') {
 							price = 0
+						} else if (obj.newPrice && obj.newPrice < obj.price) {
+							sum += parseFloat(obj.newPrice)
+						} else {
+							sum += price
 						}
-						return sum + price
+						return sum
 					}, 0)
 					.toFixed(2)
 			)

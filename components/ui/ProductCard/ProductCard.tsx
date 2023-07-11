@@ -1,12 +1,14 @@
-'use client'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState,useEffect  } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 import { addItem } from '@/redux/slices/cartSlice'
 import { updateTotalPrice } from '@/redux/slices/cartSlice'
 import { Game } from '@/interfaces/IGame'
 import styles from './ProductCard.module.scss'
+
+const maxTitleLength = 22;
+
 
 const ProductCard: FC<Game> = ({
 	id,
@@ -22,9 +24,7 @@ const ProductCard: FC<Game> = ({
 }) => {
 	const router = useRouter()
 	const dispatch = useDispatch()
-	const [addedToCart, setAddedToCart] = useState<boolean>(false)
-
-	const maxTitleLength: number = 22
+	const [addedToCart, setAddedToCart] = useState(false)
 
 	const onClickAdd = () => {
 		dispatch(
@@ -47,35 +47,32 @@ const ProductCard: FC<Game> = ({
 	}
 
 	useEffect(() => {
-		const added: string | null = localStorage.getItem(`addedToCart-${id}`)
+		const added = localStorage.getItem(`addedToCart-${id}`)
 		if (added === 'true') {
-			setAddedToCart(true)
+		  setAddedToCart(true)
 		}
-	}, [])
-
-	const onButtonClick = (): void => {
+	  }, [])
+	  
+	  const onButtonClick = () => {
 		if (addedToCart) {
-			router.push('/cart')
+		  router.push('/cart')
 		} else {
-			onClickAdd()
+		  onClickAdd()
 		}
-	}
+	  }
 
-	let newPriceYes: string = ''
-	if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
-		newPriceYes = newPrice
-	} else if (newPrice) {
-		newPriceYes = `$${newPrice}`
-	}
+	  let newPriceYes = '';
+	  if (typeof newPrice === 'string' && /^[a-zA-Z]+$/.test(newPrice)) {
+		newPriceYes = newPrice;
+	  } else if (newPrice) {
+		newPriceYes = `$${newPrice}`;
+	  }
 
-	const priceYes: string = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
+	const priceYes = /^[a-zA-Z]+$/.test(price) ? price : `$${price}`
 
-	const bgColor: string | undefined = imageDevColor
+	const bgColor = imageDevColor
 
-	const truncatedTitle: string =
-		title.length > maxTitleLength
-			? `${title.slice(0, maxTitleLength)}...`
-			: title
+	const truncatedTitle = title.length > maxTitleLength ? `${title.slice(0, maxTitleLength)}...` : title;
 
 	return (
 		<div className={styles.productCard}>

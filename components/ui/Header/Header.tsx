@@ -22,7 +22,9 @@ const Header: FC = () => {
 					/>
 				</div>
 			</Link>
+			
 			<div className={styles.header__bottomLeft}>
+			<Link href='/'>
 				<Image
 					priority
 					className={styles.header__PSlogo}
@@ -31,7 +33,7 @@ const Header: FC = () => {
 					width={200}
 					height={43}
 				/>
-
+			</Link>
 				<div className={styles.header__bottomRight}>
 					<span className={styles.header__text}>My PlayStation</span>
 					<Image
