@@ -1,0 +1,172 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[4].oneOf[9].use[5]!./components/ui/ProductCard/ProductCard.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ProductCard_productCard__Qo5PQ {
+  width: 170px;
+  height: 283px;
+  background: #1f1f1f;
+  border: 1px solid #383838;
+  border-radius: 10px;
+}
+.ProductCard_productCard__Qo5PQ h2 {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 5px;
+  margin-left: 6px;
+}
+.ProductCard_productCard__Qo5PQ p {
+  color: #c4c4c4;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  margin-left: 6px;
+}
+.ProductCard_productCard__ps__pH_kx {
+  display: flex;
+  align-items: center;
+}
+.ProductCard_productCard__psplus__RzfO6 {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.ProductCard_productCard__Qo5PQ h3 {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 6px;
+  padding: 2px 4px 4px 4px;
+  color: #c4c4c4;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  border: 1px solid #383838;
+  border-radius: 2px;
+  background: #1f1f1f;
+}
+.ProductCard_productCard__dev__JZ0XI {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 6px;
+  padding: 2px 4px 2px 4px;
+  color: #c4c4c4;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  border: 1px solid #383838;
+  border-radius: 2px;
+  background: #1f1f1f;
+}
+.ProductCard_productCard__price__kLi3C {
+  background: #0072ce;
+  box-shadow: 0px 0px 15px #0072ce;
+  border-radius: 10px;
+  width: 158px;
+  height: 26px;
+  cursor: pointer;
+  margin-top: 11px;
+  margin-left: 6px;
+}
+.ProductCard_productCard__price__kLi3C span:not(:last-child) {
+  text-decoration: line-through;
+  color: #c4c4c4;
+}
+.ProductCard_productCard__price__kLi3C span {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  transition: all 0.2s ease-in-out;
+}
+.ProductCard_productCard__price__kLi3C:hover {
+  background: #005a9e;
+}
+.ProductCard_productCard__priceSeparator__a_pj_ {
+  margin-left: 5px;
+}
+.ProductCard_productCard__added__J6Pqd {
+  background: #00bf6f;
+}
+.ProductCard_productCard__added__J6Pqd:hover {
+  background: #67c09b;
+}
+.ProductCard_productCard__addedPrice__EDxQv {
+  text-decoration: none;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[4].oneOf[9].use[5]!./components/pages/Catalog/Catalog.module.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Catalog_catalog__container__ufmVM {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.Catalog_catalog__title__iVRbU {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.Catalog_catalog__gE0xl h1 {
+  margin-top: 65px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 25px;
+  color: #ffffff;
+}
+.Catalog_catalog__item__m_DT_ {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, max-content));
+  grid-gap: 30px;
+  gap: 30px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+.Catalog_catalog__no__QsvAt {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 25px;
+  color: #ffffff;
+}
+@media (max-width: 1170px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1170px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 970px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 770px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 770px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 570px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 370px) {
+  .Catalog_catalog__title__iVRbU {
+    max-width: 170px;
+    margin: 0 auto;
+  }
+  .Catalog_catalog__title__iVRbU h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+}
