@@ -80,6 +80,14 @@
         "async": false
       }
     },
+    "(app-client)/./components/pages/Cart/Cart.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/pages/Cart/Cart.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./components/ui/Pagination/Pagination.tsx": {
       "*": {
         "id": "(sc_client)/./components/ui/Pagination/Pagination.tsx",
@@ -235,16 +243,24 @@
       ],
       "async": false
     },
-    "D:\\PET\\PS-store\\peter\\components\\pages\\Catalog\\Catalog.module.scss": {
-      "id": "(app-client)/./components/pages/Catalog/Catalog.module.scss",
+    "D:\\PET\\PS-store\\peter\\components\\pages\\Cart\\Cart.tsx": {
+      "id": "(app-client)/./components/pages/Cart/Cart.tsx",
+      "name": "*",
+      "chunks": [
+        "app/cart/page:static/chunks/app/cart/page.js"
+      ],
+      "async": false
+    },
+    "D:\\PET\\PS-store\\peter\\components\\ui\\Pagination\\Pagination.tsx": {
+      "id": "(app-client)/./components/ui/Pagination/Pagination.tsx",
       "name": "*",
       "chunks": [
         "app/catalog/page:static/chunks/app/catalog/page.js"
       ],
       "async": false
     },
-    "D:\\PET\\PS-store\\peter\\components\\ui\\Pagination\\Pagination.tsx": {
-      "id": "(app-client)/./components/ui/Pagination/Pagination.tsx",
+    "D:\\PET\\PS-store\\peter\\components\\pages\\Catalog\\Catalog.module.scss": {
+      "id": "(app-client)/./components/pages/Catalog/Catalog.module.scss",
       "name": "*",
       "chunks": [
         "app/catalog/page:static/chunks/app/catalog/page.js"
@@ -259,6 +275,9 @@
     "D:\\PET\\PS-store\\peter\\app\\not-found": [],
     "D:\\PET\\PS-store\\peter\\app\\page": [
       "static/css/app/page.css"
+    ],
+    "D:\\PET\\PS-store\\peter\\app\\cart\\page": [
+      "static/css/app/cart/page.css"
     ],
     "D:\\PET\\PS-store\\peter\\app\\catalog\\page": [
       "static/css/app/catalog/page.css"

@@ -1,0 +1,34 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 25px;
+
+  .square {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #0072ce;
+    margin-left: 7px;
+    color: white;
+    &:hover {
+      background-color: #005a9e;
+    }
+  }
+
+  .squareAll {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: white;
+    margin-left: 5px;
+    color: black;
+    &:hover {
+      background-color: #005a9e;
+      color: white;
+    }
+  }
+
+}

@@ -93,6 +93,40 @@
 .ProductCard_productCard__addedPrice__EDxQv {
   text-decoration: none;
 }
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[4].oneOf[9].use[5]!./components/ui/Pagination/Pagination.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Pagination_pagination__hxP50 {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 25px;
+}
+.Pagination_pagination__hxP50 .Pagination_square__Z33mM {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #0072ce;
+  margin-left: 7px;
+  color: white;
+}
+.Pagination_pagination__hxP50 .Pagination_square__Z33mM:hover {
+  background-color: #005a9e;
+}
+.Pagination_pagination__hxP50 .Pagination_squareAll__O3Wtk {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: white;
+  margin-left: 5px;
+  color: black;
+}
+.Pagination_pagination__hxP50 .Pagination_squareAll__O3Wtk:hover {
+  background-color: #005a9e;
+  color: white;
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[4].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[4].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[4].oneOf[9].use[5]!./components/pages/Catalog/Catalog.module.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/

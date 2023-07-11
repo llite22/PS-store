@@ -3,6 +3,7 @@ import { FC } from "react";
 import { useRouter } from "next/navigation"
 import { updateSearchParams } from "@/utils/search.params";
 import { SearchParamsProps } from "@/api/Games";
+import styles from './Pagination.module.scss'
 
 interface SearchParams {
   searchParams: SearchParamsProps
@@ -12,16 +13,16 @@ interface SearchParams {
 const Pagination:FC<SearchParams> = ({searchParams}) => {
     const router = useRouter()
 
-    const totalPages: number = 5;
+    const totalPages: number = 4;
     const pageNumbers: number[] = Array.from(Array(totalPages), (_, index: number) => index + 1);
 
   return (
-    <div className="flex justify-center mt-8 mb-8">
+    <div className={styles.pagination}>
               {pageNumbers.map((pageNumber: number) =>
                 pageNumber === parseInt(searchParams.page || "1") ? (
                   <button
                     key={pageNumber}
-                    className="mx-1 w-10 h-10 rounded bg-purple-500 hover:bg-purple-600 text-white"
+                    className={styles.square}
                   >
                     {pageNumber}
                   </button>
@@ -32,7 +33,7 @@ const Pagination:FC<SearchParams> = ({searchParams}) => {
                       const newPathnamePage: string = updateSearchParams("page", `${pageNumber}`);
                       router.push(newPathnamePage);
                     }}
-                    className="mx-1 w-10 h-10 rounded bg-gray-200 hover:bg-gray-300 text-black"
+                    className={styles.squareAll}
                   >
                     {pageNumber}
                   </button>
