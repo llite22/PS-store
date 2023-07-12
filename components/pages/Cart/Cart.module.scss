@@ -1,5 +1,4 @@
 .cart {
-	
 	&__title {
 		display: flex;
 		justify-content: space-between;
@@ -9,7 +8,7 @@
 		line-height: 25px;
 		color: #ffffff;
 		padding-top: 50px;
-		padding-bottom: 25px;
+		padding-bottom: 50px;
 	}
 	&__total {
 		font-weight: 700;
@@ -35,7 +34,6 @@
 		}
 	}
 	
-	  
 	&__text {
 		display: flex;
 		align-items: center;
@@ -131,7 +129,6 @@
 			font-size: 10px;
 		}
 	}
-	////sdfsvfgfvrsvgf
 	@media (max-width: 570px) {
 		&__title {
 			max-width: 370px;

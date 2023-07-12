@@ -16,7 +16,7 @@ const ProductsList: FC<ProductListProps> = ({ games }) => {
 			<div className="container">
 				<div className={styles.product__title}>
 					<h1>New Releases</h1>
-					<Link className={styles.product__A} href="/catalog">VIEW ALL +</Link>
+					<Link className={styles.product__link} href="/catalog">VIEW ALL +</Link>
 				</div>
 				<div className={styles.product__item}>
 					{games &&

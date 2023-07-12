@@ -81,8 +81,8 @@ const ProductCard: FC<FullGamesData> = ({
 
   return (
 	<section>
-    <Link href={`/${title}/${id}`}>
       <div className={styles.productCard}>
+      <Link href={`/${title}/${id}`}>
         <Image src={image} width={170} height={170} alt={title} />
         <h2>{truncatedTitle}</h2>
         <p>{description}</p>
@@ -99,6 +99,7 @@ const ProductCard: FC<FullGamesData> = ({
             />
           )}
         </div>
+        </Link>
         <div className={styles.ProductCard__btn}>
           {newPriceYes ? (
             <>
@@ -144,7 +145,6 @@ const ProductCard: FC<FullGamesData> = ({
           )}
         </div>
       </div>
-    </Link>
 	</section>
   );
 };

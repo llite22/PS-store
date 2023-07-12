@@ -52,7 +52,7 @@
   width: 170px;
   height: 283px;
   background: #1f1f1f;
-  border: 1px solid #383838;
+  border: 1px solid hsl(0, 0%, 22%);
   border-radius: 10px;
 }
 .ProductCard_productCard__Qo5PQ h2 {
@@ -154,7 +154,7 @@
   line-height: 25px;
   color: #ffffff;
 }
-.ProductList_product__A__jg2w4 {
+.ProductList_product__link__B6OXl {
   border: 1px solid #FFFFFF;
   font-weight: 600;
   font-size: 9px;

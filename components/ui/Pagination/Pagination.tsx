@@ -1,7 +1,7 @@
 'use client'
 import { FC } from "react";
 import { useRouter } from "next/navigation"
-import { updateSearchParams } from "@/utils/search.params";
+import { updateSearchParams } from "@/utils/searchParams";
 import { SearchParamsProps } from "@/api/Games";
 import styles from './Pagination.module.scss'
 
