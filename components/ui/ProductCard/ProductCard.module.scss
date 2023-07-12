@@ -1,9 +1,9 @@
 .productCard {
 	width: 170px;
-	height: 283px;
+	height: 287px;
 	background: #1f1f1f;
 	border: 1px solid hsl(0, 0%, 22%);
-	border-radius: 10px;
+	border-radius: 8px;
 
 	h2 {
 		color: #ffffff;
@@ -57,9 +57,9 @@
 	&__price {
 		background: #0072ce;
 		box-shadow: 0px 0px 15px #0072ce;
-		border-radius: 10px;
+		border-radius: 8px;
 		width: 158px;
-		height: 26px;
+		height: 30px;
 		cursor: pointer;
 		margin-top: 11px;
 		margin-left: 6px;
