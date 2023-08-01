@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import Link from 'next/link'
 import { FullGamesData } from '@/interfaces/IGame'
 import ProductCard from '../../ui/ProductCard/ProductCard'
@@ -9,7 +8,7 @@ interface ProductListProps {
 	games: FullGamesData[]
 }
 
-const ProductsList: FC<ProductListProps> = ({ games }) => {
+const ProductsList = ({ games }: ProductListProps) => {
 	return (
 		<section className={styles.product}>
 			<SliderGame />

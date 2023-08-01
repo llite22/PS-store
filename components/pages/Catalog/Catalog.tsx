@@ -3,14 +3,13 @@ import { SearchParamsProps } from "@/api/Games";
 import Pagination from "@/components/ui/Pagination/Pagination";
 import ProductCard from "@/components/ui/ProductCard/ProductCard";
 import { FullGamesData } from "@/interfaces/IGame";
-import { FC } from "react";
 
 interface CatalogProps {
   searchParams: SearchParamsProps;
   games: FullGamesData[];
 }
 
-const Catalog: FC<CatalogProps> = ({ games, searchParams }) => {
+const Catalog = ({ games, searchParams }: CatalogProps) => {
   const isSearchActive: boolean = !!searchParams.title;
   return (
     <section className={styles.catalog}>

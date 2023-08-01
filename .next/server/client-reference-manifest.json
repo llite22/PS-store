@@ -48,17 +48,17 @@
         "async": false
       }
     },
-    "(app-client)/./components/SliderGame/SliderGame.tsx": {
+    "(app-client)/./components/ui/ProductCard/ProductCard.tsx": {
       "*": {
-        "id": "(sc_client)/./components/SliderGame/SliderGame.tsx",
+        "id": "(sc_client)/./components/ui/ProductCard/ProductCard.tsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./components/ui/ProductCard/ProductCard.tsx": {
+    "(app-client)/./components/SliderGame/SliderGame.tsx": {
       "*": {
-        "id": "(sc_client)/./components/ui/ProductCard/ProductCard.tsx",
+        "id": "(sc_client)/./components/SliderGame/SliderGame.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -187,19 +187,19 @@
       ],
       "async": false
     },
-    "D:\\PET\\PS-store\\peter\\components\\SliderGame\\SliderGame.tsx": {
-      "id": "(app-client)/./components/SliderGame/SliderGame.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "D:\\PET\\PS-store\\peter\\components\\ui\\ProductCard\\ProductCard.tsx": {
       "id": "(app-client)/./components/ui/ProductCard/ProductCard.tsx",
       "name": "*",
       "chunks": [
         "app/catalog/page:static/chunks/app/catalog/page.js"
+      ],
+      "async": false
+    },
+    "D:\\PET\\PS-store\\peter\\components\\SliderGame\\SliderGame.tsx": {
+      "id": "(app-client)/./components/SliderGame/SliderGame.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -262,7 +262,6 @@
     "D:\\PET\\PS-store\\peter\\app\\not-found": [],
     "D:\\PET\\PS-store\\peter\\app\\catalog\\page": [
       "static/css/app/catalog/page.css"
-    ],
-    "D:\\PET\\PS-store\\peter\\app\\catalog\\loading": []
+    ]
   }
 }

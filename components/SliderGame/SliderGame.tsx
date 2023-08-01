@@ -1,10 +1,10 @@
 'use client'
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { slides } from '@/utils/Slides'
 import styles from './SliderGame.module.scss'
 
-const SliderGame: FC = () => {
+const SliderGame = () => {
 	const [slideIndex, setSlideIndex] = useState<number>(0)
 
 	useEffect(() => {

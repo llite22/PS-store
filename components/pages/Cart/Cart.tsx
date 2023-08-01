@@ -1,14 +1,14 @@
 "use client";
-import { FC } from "react";
+
+import styles from "./Cart.module.scss";
 import { FullGamesData } from "@/interfaces/IGame";
 import { removeItem } from "@/redux/slices/cartSlice";
 import { updateTotalPrice } from "@/redux/slices/cartSlice";
 import { RootState } from "@/redux/store";
-import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
-import styles from "./Cart.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 
-const Cart: FC = () => {
+const Cart = () => {
   const dispatch = useDispatch();
 
   const { items, totalPrice } = useSelector((state: RootState) => state.cart);

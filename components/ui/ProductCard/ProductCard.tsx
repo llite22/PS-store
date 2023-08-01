@@ -7,12 +7,12 @@ import { updateTotalPrice } from "@/redux/slices/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FC, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 const maxTitleLength: number = 22;
 
-const ProductCard: FC<FullGamesData> = ({
+const ProductCard = ({
   id,
   addOn,
   playstation,
@@ -23,7 +23,7 @@ const ProductCard: FC<FullGamesData> = ({
   price,
   newPrice,
   imageDevColor,
-}) => {
+}: FullGamesData) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const [addedToCart, setAddedToCart] = useState<boolean>(false);

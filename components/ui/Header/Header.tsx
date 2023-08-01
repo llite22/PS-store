@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
@@ -6,7 +5,7 @@ import Input from '../Input/Input'
 import { RootState } from '@/redux/store'
 import styles from './Header.module.scss'
 
-const Header: FC = () => {
+const Header = () => {
 	const { items } = useSelector((state: RootState) => state.cart)
 
 	return (
